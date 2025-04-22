@@ -1,29 +1,53 @@
 ---
-import CtaKnap from "../components/CtaKnap.astro"
+import CtaKnapDark from "../components/CtaKnapDark.astro"
 ---
 <div class="footer">
-<div>
-<p>GÅ ALDRIG GLIP AF NOGET</p>
-<p>BLIV MEDLEM AF NYHEDSBREV</p>
-</div>
 
 <div class="kontakt_container">
-    <h5></italic>Kontakt</italic></h5>
-<p>Spørgsmål vedrørende handelsbetingelser, betalingsservice, privatlivspolitik, størrelser, fit osv. kan stilles via kundeservice live chat (inden for åbningstider) eller på e-mail via info@bareen.dk
+<h5></italic>Kontakt</italic></h5>
+<p class="tekst4">Spørgsmål vedrørende handelsbetingelser, betalingsservice, privatlivspolitik, størrelser, fit osv. kan stilles via kundeservice live chat (inden for åbningstider) eller på e-mail via info@bareen.dk
 </p>
-<p>Vi stræber os efter at besvare din henvendelse hurtigst muligt.</p>
+<p class="tekst5">Vi stræber os efter at besvare din henvendelse hurtigst muligt.</p>
+<p class="tekst5">Åbningstider for kundeservice (e-mail / live chat):</p>
+<p class="tekst6">Man - Fre: 9:00 - 16:00</p>
+<p class="tekst6">Lør - Søn: Lukket</p>
+<p class="tekst7">Helligdage: Lukket</p>
+<div class="cta_knap"><CtaKnapDark titel="Kontakt os"></CtaKnapDark></div>
+</div>
+<div class="form">
+    <div class="tekst1">
+<p>GÅ ALDRIG GLIP AF NOGET</p>
+<p>BLIV MEDLEM AF NYHEDSBREV</p></div>
 
-<div>
-<h2>Åbningstider for kundeservice (e-mail / live chat):</h2>
-<p>Man - Fre: 9:00 - 16:00</p>
-<p>Lør - Søn: Lukket</p>
-<p>Helligdage: Lukket</p>
-  <div class="cta_knap"><CtaKnap titel="Kontakt os"></CtaKnap></div>
+  <form action="#" method="post">
+    <input type="email" name="email" placeholder="EMAIL" required>
+    <br>
+    <div class="cta_knap"><CtaKnapDark titel="SKRIV DIG OP"></CtaKnapDark></div>
+  </form>
+  <p class="tekst2">Ja, jeg ønsker at modtage henvendelser fra bareen vedrørende tilbud, nyheder og produkter indenfor deres produktsortiment via email. Dit samtykke kan til enhver tid tilbagekaldes ved at skrive til os på: info@bareen.dk</p>
+<p class="tekst3">BAREEN ApS behandler dine personoplysninger i overensstemmelse med vores privatlivspolitik﻿</p>
 </div>
-</div>
+
 </div>
 
 <style>
+    @media (max-width: 800px){
+     .footer{
+        background-color: #FFF7F3;
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+
+  .kontakt_container {
+    order: 2;
+  }
+
+  .form {
+    order: 1;
+    padding-inline: 3rem;
+  }
+    }
+    
     h5{
     font-family: Helvetica, sans-serif;
     font-style: italic;
@@ -31,5 +55,71 @@ import CtaKnap from "../components/CtaKnap.astro"
     }
     .footer{
         background-color: #FFF7F3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
+     input[type="email"] {
+      padding: 10px;
+      width: 300px;
+      border: 2px solid black;
+      border-radius: 25px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kontakt_container{
+    padding-inline: 4rem;
+    padding-block: 2rem;
+}
+.tekst1{
+    font-style: italic;
+    font-weight: 600;
+   padding-block: 2rem;
+}
+
+.tekst2{
+font-size: 15px;
+font-style: italic;
+padding-top: 1rem;
+}
+
+.tekst3{
+padding-block: 2rem;
+font-size: 12px;
+font-style: italic;
+}
+
+.tekst4{
+    font-size: 15;
+    font-style: italic;
+    font-weight: 600;
+    padding-block: 1rem;
+}
+
+.tekst5{
+    font-size: 15;
+    font-style: italic;
+    font-weight: 600;
+    padding-block: 1rem;
+   
+}
+
+.tekst6{
+   font-size: 15;
+    font-style: italic;
+    padding-block: 0.2rem; 
+}
+.tekst7{
+   font-size: 15;
+    font-style: italic;
+    padding-block: 0.2rem; 
+    padding-bottom: 1rem;
+}
+
 </style>
